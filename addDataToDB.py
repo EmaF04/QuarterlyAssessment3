@@ -8,7 +8,7 @@ cursor = conn.cursor()
 
 # Create a table named "BMGT 4410" for questions and answers
 cursor.execute('''
-CREATE TABLE IF NOT EXISTS "MKT 4200" (
+CREATE TABLE IF NOT EXISTS "DS 4220" (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     question TEXT NOT NULL,
     option_a TEXT NOT NULL,
@@ -121,11 +121,43 @@ MKT4200questions = [
      "A tool for database security", "A feature to design web pages", "A component that allows users to create and share custom data sets", "An interface for user authentication", "C")
 ]
 
+questions = [
+    ("In linear regression, what does the coefficient of a predictor variable represent?",
+     "The importance of the variable", "The slope of the regression line", "The intercept of the regression line", "The statistical significance of the model", "B"),
+    
+    ("What is the purpose of a residual plot in regression analysis?",
+     "To show the relationship between variables", "To check for normality", "To assess the fit of the regression model by examining residual patterns", "To calculate R-squared", "C"),
+    
+    ("In R, which function is commonly used to fit a linear regression model?",
+     "lm()", "regression()", "fitModel()", "linearModel()", "A"),
+    
+    ("What does an R-squared value represent in a regression model?",
+     "The model's accuracy", "The proportion of variance in the dependent variable explained by the model", "The reliability of the data", "The total variation in the data", "B"),
+    
+    ("Which statistical test would you use in R to compare the means of two independent groups?",
+     "ANOVA", "Chi-square test", "t-test", "Correlation test", "C"),
+    
+    ("In hypothesis testing, what does a p-value less than 0.05 typically indicate?",
+     "A highly inaccurate model", "Insufficient data", "Statistical significance at the 5% level", "A 50% chance of error", "C"),
+    
+    ("Which R function is used to perform a t-test?",
+     "t.test()", "testT()", "ttestR()", "test()", "A"),
+    
+    ("What is the main purpose of a multiple regression analysis?",
+     "To predict a single dependent variable using multiple independent variables", "To analyze the relationship between two categorical variables", "To reduce the sample size", "To calculate the mean of all variables", "A"),
+    
+    ("When conducting an ANOVA test in R, which function is typically used?",
+     "anova()", "aov()", "anova.test()", "aov.test()", "B"),
+    
+    ("In R, what does the summary() function provide when used with a regression model?",
+     "A histogram of the data", "Only the predicted values", "Detailed information about model coefficients, statistical significance, and residuals", "A scatter plot", "C")
+]
+
 
 # Insert questions into the "BMGT 4410" table
 for q in questions:
     cursor.execute('''
-    INSERT INTO "MKT 4200" (question, option_a, option_b, option_c, option_d, correct_answer)
+    INSERT INTO "DS 4220" (question, option_a, option_b, option_c, option_d, correct_answer)
     VALUES (?, ?, ?, ?, ?, ?)
     ''', q)
 

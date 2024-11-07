@@ -8,7 +8,7 @@ cursor = conn.cursor()
 
 # Create a table named "BMGT 4410" for questions and answers
 cursor.execute('''
-CREATE TABLE IF NOT EXISTS "BMGT 4410" (
+CREATE TABLE IF NOT EXISTS "MKT 4200" (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     question TEXT NOT NULL,
     option_a TEXT NOT NULL,
@@ -66,7 +66,7 @@ DS4210questions = [
      "A tool for coding custom reports", "A cloud-based platform for sharing and collaborating on reports", "A feature to design dashboards", "An ETL tool", "B")
 ]
 
-questions = [
+BMGT4410questions = [
     ("What is the main goal of conflict management in the workplace?",
      "To ignore conflicts", "To eliminate conflicts completely", "To manage and resolve conflicts effectively", "To escalate conflicts for management intervention", "C"),
     ("Which of the following is NOT a common conflict management style?",
@@ -89,11 +89,43 @@ questions = [
      "Both parties lose equally", "One party wins at the expense of the other", "Both parties find a mutually beneficial solution", "The conflict remains unresolved", "C")
 ]
 
+MKT4200questions = [
+    ("What is the primary goal of market segmentation in marketing?",
+     "To increase product variety", "To reduce the target market", "To divide a broad market into subsets with shared characteristics", "To eliminate low-income customers", "C"),
+     
+    ("Which of the following is a common basis for segmenting consumer markets?",
+     "Production process", "Product size", "Customer demographics", "Packaging type", "C"),
+     
+    ("In pricing strategy, what does 'price elasticity of demand' measure?",
+     "The cost of production", "The sensitivity of demand to price changes", "The difference between cost and sale price", "The fixed price per unit", "B"),
+     
+    ("What is a 'loss leader' pricing strategy?",
+     "Setting prices below cost to attract customers", "Increasing prices to improve brand perception", "Setting high prices to signal quality", "Offering discounts to loyal customers", "A"),
+     
+    ("Which SQL clause is used to filter results based on a condition?",
+     "SELECT", "WHERE", "JOIN", "ORDER BY", "B"),
+     
+    ("In SQL, which function is used to calculate the average of a set of values?",
+     "COUNT()", "SUM()", "AVG()", "MIN()", "C"),
+     
+    ("What is the purpose of a calculated field in Tableau?",
+     "To create a new data source", "To filter data dynamically", "To perform custom calculations on data within a worksheet", "To remove null values", "C"),
+     
+    ("In Tableau, which chart type is most suitable for showing the proportion of parts to a whole?",
+     "Line chart", "Scatter plot", "Pie chart", "Gantt chart", "C"),
+     
+    ("What is IBM Cognos Analytics primarily used for?",
+     "Network security", "Database management", "Business intelligence and data visualization", "Web development", "C"),
+     
+    ("In IBM Cognos, what is a 'data module'?",
+     "A tool for database security", "A feature to design web pages", "A component that allows users to create and share custom data sets", "An interface for user authentication", "C")
+]
+
 
 # Insert questions into the "BMGT 4410" table
 for q in questions:
     cursor.execute('''
-    INSERT INTO "BMGT 4410" (question, option_a, option_b, option_c, option_d, correct_answer)
+    INSERT INTO "MKT 4200" (question, option_a, option_b, option_c, option_d, correct_answer)
     VALUES (?, ?, ?, ?, ?, ?)
     ''', q)
 
